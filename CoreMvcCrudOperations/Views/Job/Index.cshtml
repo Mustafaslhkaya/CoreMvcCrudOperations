@@ -1,0 +1,26 @@
+﻿@model List<CoreMvcCrudOperations.Models.Job>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Birim Id</th>
+        <th>Birim Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var birim in Model)
+    {
+        <tr>
+            <td>@birim.JobId</td>
+            <td>@birim.JobName</td>
+            <td><a href="/Job/DeleteJob/@birim.JobId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Job/UpdateJob/@birim.JobId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-primary">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Job/AddJob" class="btn btn-primary">Yeni Birim Ekle</a>
+

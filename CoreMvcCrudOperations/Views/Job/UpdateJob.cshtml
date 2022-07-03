@@ -1,0 +1,17 @@
+﻿@model CoreMvcCrudOperations.Models.Job
+@{
+    ViewData["Title"] = "UpdateJob";
+}
+
+@using (Html.BeginForm("UpdateJob", "Job", FormMethod.Post))
+{
+    @Html.LabelFor(x=>x.JobId)
+    @Html.TextBoxFor(x=>x.JobId,new {@class="form-control"})
+    <br />
+    @Html.LabelFor(x=>x.JobName)
+    @Html.TextBoxFor(x=>x.JobName,new {@class="form-control"})
+    <button class="btn btn-info">Birim Güncelle</button>
+}
+
+
+

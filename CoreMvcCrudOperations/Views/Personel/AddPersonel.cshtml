@@ -1,0 +1,22 @@
+﻿@model CoreMvcCrudOperations.Models.Personel
+@{
+    ViewData["Title"] = "AddPersonel";
+}
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.PersonelName)
+    @Html.TextBoxFor(x=>x.PersonelName,new {@class="form-control"})
+    <br />
+     @Html.LabelFor(x=>x.PersonelSurname)
+    @Html.TextBoxFor(x=>x.PersonelSurname,new {@class="form-control"})
+    <br />
+     @Html.LabelFor(x=>x.City)
+    @Html.TextBoxFor(x=>x.City,new {@class="form-control"})
+    <br />
+     @Html.LabelFor(x=>x.JobId)
+    @Html.DropDownListFor(x=>x.Job.JobId,(List<SelectListItem>)ViewBag.PersonelList,new {@class="form-control"})
+        <br />
+    <button class="btn btn-info">Yeni Personel Ekle</button>
+    
+</form>
+

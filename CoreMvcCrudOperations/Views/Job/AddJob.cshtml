@@ -1,0 +1,11 @@
+﻿@model CoreMvcCrudOperations.Models.Job
+@{
+    ViewData["Title"] = "AddJob";
+}
+
+<form class="form-group" method="post">
+   @Html.LabelFor(x=>x.JobName)
+    @Html.TextBoxFor(x=>x.JobName,new {@class="form-control"})
+    <button class="btn btn-info">Birim Ekle</button>
+</form>
+

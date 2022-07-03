@@ -1,0 +1,32 @@
+﻿@model List<CoreMvcCrudOperations.Models.Personel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>PersonelId</th>
+        <th>PersonelName</th>
+        <th>PersonelSurname</th>
+        <th>City</th>
+        <th>Birim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach(var birim in Model)
+    {
+        <tr>
+            <td>@birim.PersonelId</td>
+            <td>@birim.PersonelName</td>
+            <td>@birim.PersonelSurname</td>
+            <td>@birim.City</td>
+            <td>@birim.Job.JobName</td>
+            <td><a href="/Personel/DeletePersonel/@birim.PersonelId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/UpdatePersonel/@birim.PersonelId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="#" class="btn btn-primary">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/AddPersonel" class="btn btn-primary">Yeni Personel Ekle</a>
+
