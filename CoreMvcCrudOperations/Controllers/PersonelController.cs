@@ -1,5 +1,6 @@
 ﻿using CoreMvcCrudOperations.DataAccess;
 using CoreMvcCrudOperations.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ namespace CoreMvcCrudOperations.Controllers
     public class PersonelController : Controller
     {
         Context context=new Context();
+        [Authorize]
         public IActionResult Index()
         {
             var personelList = context.Personels.Include(x => x.Job).ToList();

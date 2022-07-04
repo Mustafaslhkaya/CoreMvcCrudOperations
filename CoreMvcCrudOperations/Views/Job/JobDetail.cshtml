@@ -1,0 +1,23 @@
+﻿@model List<CoreMvcCrudOperations.Models.Personel>
+@{
+    ViewData["Title"] = "JobDetail";
+}
+<h1>@ViewBag.GetJobName Departmanı</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>PersonelId</th>
+        <th>PersonelName</th>
+        <th>PersonelSurname</th>
+        <th>City</th>
+    </tr>
+    @foreach(var birim in Model)
+    {
+        <tr>
+            <td>@birim.PersonelId</td>
+            <td>@birim.PersonelName</td>
+            <td>@birim.PersonelSurname</td>
+            <td>@birim.City</td>
+        </tr>
+    }
+</table>
+

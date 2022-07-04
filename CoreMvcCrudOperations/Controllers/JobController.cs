@@ -45,5 +45,13 @@ namespace CoreMvcCrudOperations.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult JobDetail(int id)
+        {
+            var personelList = context.Personels.Where(x => x.JobId == id).ToList();
+            var getJobName = context.Jobs.Where(x => x.JobId == id).Select(y=>y.JobName).FirstOrDefault();
+            ViewBag.GetJobName = getJobName;
+            return View(personelList);
+        }
     }
 }
